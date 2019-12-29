@@ -1,0 +1,34 @@
+doctype html
+
+mixin itemActive(title,url)
+  li
+    a(href=url class=path==url?'active':'')=title
+
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container
+      header
+        nav
+          ul
+            +itemActive("About", "/")
+            +itemActive("News", "/news")
+            +itemActive("Admin", "/admin")
+            //- li
+            //-   a(href="/") About
+            //- li
+            //-   a(href="/news") News
+            //- li
+            //-   a(href="/admin") Admin
+        hr
+        h1= title     
+      main        
+        block content
+      footer
+        hr
+        p You are @ #{title}, the site is built on the 
+          a(href="https://expressjs.com") Express.js
+        p This is the footer here. Hello. You are welcome to look at it now!
+    script(src="/javascripts/main.js")

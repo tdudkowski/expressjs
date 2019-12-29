@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  .add
+    h2 Add content
+    ul
+      li
+        a(href="admin/article/add") Add an article
+      li
+        a(href="admin/news/add") Add a news
+  .list
+    h2 List of content
+    p #[strong Important:] After deleting note, it is still visible on the list, Admin page must be reloaded to show current state.
+    
+    h3 Articles
+    table
+      tr
+        th id
+        th title
+        th created
+        th delete
+      each item, index in dataArticles
+        tr
+          td=index
+          td=item.title
+          td=item.created
+          td
+            a(href=`admin/article/delete/${item._id}`) delete
+    
+    h3 News
+    table
+      tr
+        th id
+        th title
+        th created
+        th delete
+      each item, index in dataNews
+        tr
+          td=index
+          td=item.title
+          td=item.created
+          td
+            a(href=`admin/news/delete/${item._id}`) delete
+  

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  if errors.errors !== undefined
+    each message in errors.errors
+      p=message
+
+  form(method='post')#form
+   p
+    label Title
+    br
+    input(type="text" name="title" value=body.title || '')
+    
+   p
+    label Content
+    br
+    textarea(name="content", cols="50", rows="8")=body.content || ''
+       
+   p
+    input(type="submit" value='Save')

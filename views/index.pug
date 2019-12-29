@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  .todo
+    h3 Disclaimer
+    p This is my first take on MongoDB + Express system, I'm happy it works ;-)
+    p It is done only for a learning purposes only
+    p This is open system to write, and present data. Open to everyone - thus nor author, nor service provider are responsible for any content displayed here.
+
+    h3 TODO
+    ul
+      li After deleting note, it is still visible on the list, Admin page must be reloaded to show current state, News page is OK, because it is presented after reload. I regard it as a bug to solve.
+      li RWD
+      li Reset option, to make default content at once
+      li Polish code, and design
+      li Add images
+      li Make search configurable
+      li On main page Articles should be shortened with link to full version
+      li Add application (AJAX) tabs, one with the shop system, and second with JS games or quizzes
+      li Maybe write it in Handlebars template system, but really now I see no reason to do it
+
+  .description
+    h3 Description
+    ul
+      li Simple news system for displaying information
+      li There're two kinds of notes: Articles and News, both are wrote and displayed distinctively
+      li Login system, with open information but it works and one must to be logged to write or delete notes
+      li Search on all text, titles, and content Articles, and News
+    
+    h3 Technologies used
+    ul
+      li Express.js (Node.js framework)
+      li MongoDB (Atlas online + mongoose)
+      li cookies (cookie-session)
+      //- li XMLHttpRequest()
+      li View template: peg
+
+
